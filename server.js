@@ -21,6 +21,7 @@ if (environment === 'production') {
 }
 
 // Add routes, both API and view
+
 require('./server/routes')(app, passport);
 
 // Connect to the Mongo DB
@@ -30,3 +31,4 @@ mongoose.connect(MongoURI);
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
