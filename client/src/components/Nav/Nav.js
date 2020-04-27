@@ -10,11 +10,11 @@ class Nav extends React.Component {
    
     return (
       <React.Fragment>
-      <div className="navbar">
+      <div className='navbar'>
         
         
-          {/* <div className="links">
-          <Link to="/secondary"><b>Secondary</b></Link>
+          {/* <div className='links'>
+          <Link to='/secondary'><b>Secondary</b></Link>
        
         </div>   */}
     </div>
