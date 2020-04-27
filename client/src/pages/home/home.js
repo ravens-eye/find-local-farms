@@ -11,7 +11,7 @@
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing.unit * 2,
+      padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
       lineHeight: '45px',
@@ -34,7 +34,7 @@
   
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
+        <Grid container spacing={4}>
     
           <Grid item xs={12}>
             {/* <Paper className='colorShift'>
