@@ -1,22 +1,30 @@
-const express = require("express");
+// Import 3rd party libs
+const express = require('express');
+const passport = require('passport');
+const config = require('config');
+const mongoose = require('mongoose');
 
-const mongoose = require("mongoose");
-const routes = require("./server/routes");
+// Variables
+const PORT = process.env.PORT || config.get('PORT');
+const environment = process.env.NODE_ENV || config.get('env');
+const MongoURI = process.env.MONGODB_URI || config.get('mongoUri');
+
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (environment === 'production') {
+  app.use(express.static('client/build/static'));
 }
+
 // Add routes, both API and view
-app.use(routes);
+require('./server/routes')(app, passport);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewview");
+mongoose.connect(MongoURI);
 
 // Start the API server
 app.listen(PORT, function() {
