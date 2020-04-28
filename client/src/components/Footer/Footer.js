@@ -5,22 +5,19 @@ import { withStyles } from '@material-ui/core/styles';
 
 
 const styles = theme => ({
-    footerStyle : {
+  footerStyle : {
     backgroundColor: 'rgba(80, 170, 85, 0.493)',
     opacity: '0.4',
     fontSize: '15px',
     color: 'white',
     borderTop: '1px solid #E7E7E7',
     textAlign: 'left',
-    padding: '20px',
-    // position: 'fixed',
     left: '0',
     bottom: '0',
     height: '70px',
-    width: '100%'
-  },
-  
-
+    padding: '1.5rem',
+    width: 'calc(100% - 3rem)'
+  }
 });
 
 function Footer(props) {

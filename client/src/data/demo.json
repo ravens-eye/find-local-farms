@@ -1,0 +1,68 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "farms"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 1,
+        "NAME": "Coon Rock Farm",
+        "EMAIL": "Orders@coonrockfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "coonrockfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.014015,
+          35.950826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 2,
+        "NAME": "Dawn Breaker Farm",
+        "EMAIL": "Orders@dawnbreakerfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "dawnbreakerfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.962517,
+          35.874081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 3,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    }
+  ]
+}
