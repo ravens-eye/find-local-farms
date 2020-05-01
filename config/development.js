@@ -4,5 +4,6 @@ module.exports = {
   env: 'development',
   host: 'localhost',
   PORT: '3001',
-  mongoUri: 'mongodb://localhost/farm-db'
+  mongoUri: 'mongodb://localhost/farm-db',
+  MAX_RETRIES: 2
 };

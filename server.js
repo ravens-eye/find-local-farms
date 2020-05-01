@@ -2,14 +2,14 @@
 const express = require('express');
 const passport = require('passport');
 const config = require('config');
-const mongoose = require('mongoose');
+const morgan = require('morgan');
 
 // Variables
 const PORT = process.env.PORT || config.get('PORT');
 const environment = process.env.NODE_ENV || config.get('env');
-const MongoURI = process.env.MONGODB_URI || config.get('mongoUri');
 
 const app = express();
+app.use(morgan('dev'));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -21,14 +21,15 @@ if (environment === 'production') {
 }
 
 // Add routes, both API and view
-
 require('./server/routes')(app, passport);
 
-// Connect to the Mongo DB
-mongoose.connect(MongoURI);
+// Connect to the Mongo server
+const db = require('./server/database').initializeDatabase();
 
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+// Start the API server once database is connected
+db.on('connected', () => {
+  console.log('Mongoose connection established');
+  app.listen(config.PORT, function() {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
 });
-
