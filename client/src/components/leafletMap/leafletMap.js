@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import LocateControl from '../LocateControl';
-import axios from 'axios';
-// import * as businessData from '../../data/demo.json';
+import * as businessData from '../../data/demo.json';
+import API from '../../utils/API';
 import './leafletMap.css';
+
 
 
 export const LeafletMap = () => {
@@ -12,20 +13,10 @@ export const LeafletMap = () => {
   const [state] = useState({
     lat: 34.926730,
     lng: -77.944321,
-    zoom: 12,
+    zoom: 13,
   });
   const position = [state.lat, state.lng];
-  const [businessData, setBusinessData] = useState();
   const [activeBusiness, setActiveBusiness] = useState(null);
-
-  useEffect(() => {
-    axios.get('/api/business')
-      .then(response => {
-        setBusinessData(response.data);
-      })
-      .catch(err => console.log);
-
-  }, [setBusinessData]);
 
   // Constants
   const locateOptions = {
@@ -34,7 +25,7 @@ export const LeafletMap = () => {
       title: 'Show Current Location'
     },
     locateOptions: {
-      maxZoom: 12
+      maxZoom: 13
     },
     onActivate: () => {} // callback before engine starts retrieving locations
   };
@@ -45,39 +36,35 @@ export const LeafletMap = () => {
         attribution='&copy; <a href=&apos;http://osm.org/copyright&apos;>OpenStreetMap</a> contributors'
         url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
       />
-      {businessData && businessData.map((biz, i) => (
-        <Marker
-          key={`${biz.createdAt}-${i}`}
-          position={[
-            biz.location[0].lat,
-            biz.location[0].lng
-          ]}
-          onClick={() => {
-            setActiveBusiness(biz);
-          }}
-        />
-      ))}
+            {businessData.features.map(biz => (
+      <Marker
+        key={biz.properties.ID}
+        position={[
+          biz.geometry.coordinates[1],
+          biz.geometry.coordinates[0]
+        ]}
+        onClick={() => {
+          setActiveBusiness(biz);
+        }}
+      />
+    ))}
 
-      {activeBusiness && (
-        <Popup
-          position={[
-            activeBusiness.location[0].lat,
-            activeBusiness.location[0].lng
-          ]}
-          onClose={() => {
-            setActiveBusiness(null);
-          }}
-        >
-          <div>
-            <h2>{activeBusiness.name}</h2>
-            <p>Contact us</p>
-            <ul>
-              <li>{activeBusiness.contact.email}</li>
-              <li>{activeBusiness.contact.phone}</li>
-            </ul>
-          </div>
-        </Popup>
-      )}
+    {activeBusiness && (
+      <Popup
+        position={[
+          activeBusiness.geometry.coordinates[1],
+          activeBusiness.geometry.coordinates[0]
+        ]}
+        onClose={() => {
+          setActiveBusiness(null);
+        }}
+      >
+        <div>
+          <h2>{activeBusiness.properties.NAME}</h2>
+          <p>{activeBusiness.properties.EMAIL}</p>
+        </div>
+      </Popup>
+    )}
       <LocateControl options={locateOptions} startDirectly/>
     </Map>
   );
