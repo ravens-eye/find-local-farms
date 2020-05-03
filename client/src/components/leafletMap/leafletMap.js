@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import LocateControl from '../LocateControl';
 import * as businessData from '../../data/demo.json';
-import API from '../../utils/API';
+// import API from '../../utils/API';
 import './leafletMap.css';
 
 

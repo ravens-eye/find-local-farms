@@ -18,10 +18,10 @@ componentDidMount() {
 getAllBusinesses = () => {
   API.getAllBusinesses()
     .then(res => {
+      console.log(res);      
       this.setState({
         businesses: res
       })
-      console.log(res);      
     })
 }
 
