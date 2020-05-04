@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import LocateControl from '../LocateControl';
-import axios from 'axios';
 // import * as businessData from '../../data/demo.json';
 import './leafletMap.css';
 
+import { getAllBusinesses } from '../../api/businessApi';
 
 export const LeafletMap = () => {
   // State hooks
@@ -18,13 +18,11 @@ export const LeafletMap = () => {
   const [businessData, setBusinessData] = useState();
   const [activeBusiness, setActiveBusiness] = useState(null);
 
-  useEffect(() => {
-    axios.get('/api/business')
-      .then(response => {
-        setBusinessData(response.data);
-      })
-      .catch(err => console.log);
-
+  useEffect(async () => {
+    async function anon () {
+      setBusinessData(await getAllBusinesses());
+    }
+    anon();
   }, [setBusinessData]);
 
   // Constants
@@ -45,7 +43,7 @@ export const LeafletMap = () => {
         attribution='&copy; <a href=&apos;http://osm.org/copyright&apos;>OpenStreetMap</a> contributors'
         url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
       />
-      {businessData && businessData.map((biz, i) => (
+      {businessData && businessData.length > 0 && businessData.map((biz, i) => (
         <Marker
           key={`${biz.createdAt}-${i}`}
           position={[
