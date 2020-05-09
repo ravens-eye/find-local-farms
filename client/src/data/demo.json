@@ -88,17 +88,17 @@
       "properties": {
         "ID": 5,
         "NAME": "Eight Arrows Farm",
-        "EMAIL": "Orders@eightarrowsfarm.com",
-        "ADDRESS": "123 Fake Street",
-        "OFFER": "meat and cheese",
-        "URL": "eightarrowfarm.com(fake)",
-        "NOTES": "I am a note"
+        "EMAIL": "eightarrowsfarm@gmail.com",
+        "ADDRESS": "300 Plum Tree Ln, Roxboro, NC 27574",
+        "OFFER": "Pasture raised & rotated, and organically fed chicken, turkey, and pork.",
+        "URL": "www.eightarrowsfarm.com",
+        "NOTES": "Look at our website under products to see what's in stock and then send us an email."
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.792572,
-          35.932637
+          -78.8741706,
+          36.3971278
         ]
       }
     },
@@ -106,18 +106,18 @@
       "type": "Feature",
       "properties": {
         "ID": 6,
-        "NAME": "Eight Arrows Farm",
+        "NAME": "Fickle Creek Farm",
         "EMAIL": "Orders@eightarrowsfarm.com",
-        "ADDRESS": "123 Fake Street",
-        "OFFER": "meat and cheese",
-        "URL": "eightarrowfarm.com(fake)",
-        "NOTES": "I am a note"
+        "ADDRESS": "211 Fickle Creek Crossing, Efland, NC 27243",
+        "OFFER": "Beef, pork, chicken, lamb, eggs, and veggies",
+        "URL": "Ficklecreekfarm.com",
+        "NOTES": "Raleigh, Durham, Chapel Hill / Carrboro, Cary, Hillsborough"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.792572,
-          35.932637
+          -79.2027087,
+          36.018735
         ]
       }
     },
@@ -125,18 +125,18 @@
       "type": "Feature",
       "properties": {
         "ID": 7,
-        "NAME": "Eight Arrows Farm",
-        "EMAIL": "Orders@eightarrowsfarm.com",
-        "ADDRESS": "123 Fake Street",
-        "OFFER": "meat and cheese",
-        "URL": "eightarrowfarm.com(fake)",
-        "NOTES": "I am a note"
+        "NAME": "MamaSprings Farm",
+        "EMAIL": "mamaspringsfarm@gmail.com",
+        "ADDRESS": "622 S Mineral Springs Rd, Durham, NC 27703",
+        "OFFER": "Assorted vegetable crops, microgreens & shoots, cut flowers.",
+        "URL": "mamaspringsfarm.com/",
+        "NOTES": "On-Farm pickup on Fridays (pre-order only) & limited delivery to 27703. Email us to get our weekly pre-order form."
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.792572,
-          35.932637
+          -78.8319807,
+          35.9732623
         ]
       }
     },
