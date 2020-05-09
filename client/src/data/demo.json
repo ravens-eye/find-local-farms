@@ -11,18 +11,18 @@
       "type": "Feature",
       "properties": {
         "ID": 1,
-        "NAME": "Coon Rock Farm",
-        "EMAIL": "Orders@coonrockfarm.com",
-        "ADDRESS": "123 Fake Street",
-        "OFFER": "meat and cheese",
-        "URL": "coonrockfarm.com(fake)",
-        "NOTES": "I am a note"
+        "NAME": "Bull City Farm",
+        "EMAIL": "samantha@bullcityfarm.com",
+        "ADDRESS": "5315 Isham Chambers Rd, Rougemont, NC 27572",
+        "OFFER": "Pasture raised turkey, pork, eggs and lamb",
+        "URL": "www.bullcityfarm.com",
+        "NOTES": "Check social media and website for details"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.014015,
-          35.950826
+          -78.82293,
+          36.23005
         ]
       }
     },
@@ -30,18 +30,18 @@
       "type": "Feature",
       "properties": {
         "ID": 2,
-        "NAME": "Dawn Breaker Farm",
-        "EMAIL": "Orders@dawnbreakerfarm.com",
-        "ADDRESS": "123 Fake Street",
-        "OFFER": "meat and cheese",
-        "URL": "dawnbreakerfarm.com(fake)",
-        "NOTES": "I am a note"
+        "NAME": "Dawnbreaker Farms",
+        "EMAIL": "ben@dawnbreakerfarms.com",
+        "ADDRESS": "3200 Breeze Rd, Hurdle Mills, NC 27541",
+        "OFFER": "Pork, chicken, turkey and duck",
+        "URL": "https://dawnbreaker-farms.myshopify.com/collections/all",
+        "NOTES": "All of the Triangle Area"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.962517,
-          35.874081
+          -79.05132,
+          36.23335
         ]
       }
     },
@@ -49,6 +49,139 @@
       "type": "Feature",
       "properties": {
         "ID": 3,
+        "NAME": "Coon ROck Farm",
+        "EMAIL": "orders@coonrockfarm.com",
+        "ADDRESS": "1021 Dimmocks Mill Rd, Hillsborough, NC 27278",
+        "OFFER": "Grass-fed beef & lamb, pasture raised pork & chicken, sustainably-grown produce",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "All of the Triangle Area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.12876,
+          36.06619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 4,
+        "NAME": "Double R Cattle Services, Inc.",
+        "EMAIL": "info@DoubleRCattleServices.com",
+        "ADDRESS": "701 Ollie Ln, Hillsborough, NC 27278",
+        "OFFER": "100% Grass-fed Beef, Honey, Pastured Pork (Strawberries soon)",
+        "URL": "https://doublercattleservices.com/",
+        "NOTES": "Pick up at the farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9723587,
+          36.1398703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 5,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 6,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 7,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 8,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 9,
+        "NAME": "Eight Arrows Farm",
+        "EMAIL": "Orders@eightarrowsfarm.com",
+        "ADDRESS": "123 Fake Street",
+        "OFFER": "meat and cheese",
+        "URL": "eightarrowfarm.com(fake)",
+        "NOTES": "I am a note"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.792572,
+          35.932637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 10,
         "NAME": "Eight Arrows Farm",
         "EMAIL": "Orders@eightarrowsfarm.com",
         "ADDRESS": "123 Fake Street",
@@ -64,5 +197,6 @@
         ]
       }
     }
+
   ]
 }
