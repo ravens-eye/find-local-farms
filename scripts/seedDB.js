@@ -19,9 +19,9 @@ console.log('Date: ' + date);
 
 const userSeed = [
   {
-    username: 'tlburch',
+    username: 'tlburchh',
     firstName: 'Tom',
-    lastName: 'Burcchardt',
+    lastName: 'Burchhardt',
     accountType: 'Personal',
     verified: true,
     createdAt: date
@@ -39,20 +39,22 @@ const userSeed = [
 
 const businessSeed = [
   {
-    name: 'Dawn Breaker Farm',
+    name: 'Dawnbreaker Farm',
+    type: 'farm',
     contact: {
       phone: '123-456-789',
-      email: 'contact@dbf.com'
+      email: 'ben@dawnbreakerfarms.com'
     },
-    address: '123 Fake Street',
-    location: [{ lat: 35.897821, lng: -78.948777 }],
+    address: '3200 Breeze Rd, Hurdle Mills, NC 27541',
+    location: [{ lat: 36.23335, lng: -79.05132 }],
     features: ['isOpen', 'delivery'],
-    offerings: ['Beef', 'Cabbage'],
-    notes: 'Come correct or you\'ll take a shotgun to the dome.',
+    offerings: ['Pork', 'Chicken', 'Turkey','Duck'],
+    notes: 'Delivery to all of the Triangle Area',
     createdAt: date
   },
   {
     name: 'Coon Rock Farm',
+    type: 'farm',
     contact: {
       phone: '123-456-789',
       email: 'orders@coonrockfarm.com'
@@ -66,6 +68,7 @@ const businessSeed = [
   },
   {
     name: 'Eight Arrows Farm',
+    type: 'farm',
     contact: {
       phone: '123-456-789',
       email: 'orders@eightarrowsfarm.com'
@@ -77,6 +80,118 @@ const businessSeed = [
     notes: 'Come see a goat movie with us.',
     createdAt: date
   }
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
+  {
+    name: 'Coon Rock Farm',
+    type: 'farm',
+    contact: {
+      phone: '123-456-789',
+      email: 'orders@coonrockfarm.com'
+    },
+    address: '456 Other Street',
+    location: [{ lat: 35.909864, lng: -78.791740 }],
+    features: ['onlineOrder', 'curbsidePickup'],
+    offerings: ['Cheese', 'Eggs'],
+    notes: 'We\'re almost sold out!',
+    createdAt: date
+  },
 ];
 
 

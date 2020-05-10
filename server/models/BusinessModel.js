@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { validateAddress, validatePhone, validateEmail } = require('../utils/validators');
+const { validateAddress,  validateEmail } = require('../utils/validators');
 
 const BusinessSchema = new Schema ({
   name: {
@@ -12,7 +12,7 @@ const BusinessSchema = new Schema ({
   contact: {
     phone: {
       type: String,
-      validate: [validatePhone, 'Must be a valid phone number']
+      // validate: [validatePhone, 'Must be a valid phone number']
     },
     email: {
       type: String,
