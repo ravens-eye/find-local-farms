@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { validateAddress,  validateEmail } = require('../utils/validators');
+const { validateAddress, validateEmail } = require('../utils/validators');
 
 const BusinessSchema = new Schema ({
   name: {

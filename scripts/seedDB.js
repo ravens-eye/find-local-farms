@@ -42,9 +42,10 @@ const businessSeed = [
     name: 'Dawnbreaker Farm',
     type: 'farm',
     contact: {
-      phone: '123-456-789',
+      phone: null,
       email: 'ben@dawnbreakerfarms.com'
     },
+    url: 'https://dawnbreaker-farms.myshopify.com/collections/all',
     address: '3200 Breeze Rd, Hurdle Mills, NC 27541',
     location: [{ lat: 36.23335, lng: -79.05132 }],
     features: ['isOpen', 'delivery'],
@@ -56,14 +57,14 @@ const businessSeed = [
     name: 'Coon Rock Farm',
     type: 'farm',
     contact: {
-      phone: '123-456-789',
+      phone: null,
       email: 'orders@coonrockfarm.com'
     },
-    address: '456 Other Street',
+    address: '1021 Dimmocks Mill Rd, Hillsborough, NC 27278',
     location: [{ lat: 35.909864, lng: -78.791740 }],
-    features: ['onlineOrder', 'curbsidePickup'],
-    offerings: ['Cheese', 'Eggs'],
-    notes: 'We\'re almost sold out!',
+    features: ['onlineOrder', 'delivery'],
+    offerings: ['Beef', 'Lamb', 'Pork', 'Chicken', 'Produce'],
+    notes: 'Delivery to all of the Triangle Area',
     createdAt: date
   },
   {
