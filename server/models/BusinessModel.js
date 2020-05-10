@@ -9,6 +9,10 @@ const BusinessSchema = new Schema ({
     trim: true,
     unique: true
   },
+  type: {
+    type: String,
+    trim: true,
+  },
   contact: {
     phone: {
       type: String,
@@ -18,6 +22,10 @@ const BusinessSchema = new Schema ({
       type: String,
       validate: [validateEmail, 'Please enter a valid email']
     }
+  },
+  url: {
+    type: String,
+    trim: true,
   },
   address: {
     type: String,
