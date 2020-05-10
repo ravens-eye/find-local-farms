@@ -12,10 +12,12 @@ const BusinessSchema = new Schema ({
   type: {
     type: String,
     trim: true,
+    lowercase: true
   },
   contact: {
     phone: {
       type: String,
+      // TODO: Re-add later
       // validate: [validatePhone, 'Must be a valid phone number']
     },
     email: {
