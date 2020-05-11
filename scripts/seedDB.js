@@ -6,7 +6,7 @@ const { Business, User } = da;
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.mongoUri || 'mongodb://localhost/farm-db', { 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/farm-db', { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
