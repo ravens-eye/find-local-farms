@@ -15,6 +15,7 @@ module.exports = function enableRoutes(app, passport) {
   app.use('/auth', require('./auth'));
 
   if (environment === 'production') {
+    console.log('Production routes enabled.' + '\n');
     // Page routes
     app.route('/admin*').get(function adminPage(req, res) {
       res.sendFile('client/build/index.html'); // Admin app location may change in future
@@ -23,5 +24,7 @@ module.exports = function enableRoutes(app, passport) {
     app.route('/*').get(function mainApp(req, res) {
       res.sendFile('client/build/index.html');
     });
+  } else {
+    console.log('Non production environment.' + '/n');
   }
 }
