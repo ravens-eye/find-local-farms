@@ -1,5 +1,6 @@
 // Import 3rd party libs
 const config = require('config');
+const path = require('path');
 
 // Import local libs
 // const auth = require('../passport');
@@ -15,13 +16,14 @@ module.exports = function enableRoutes(app, passport) {
   app.use('/auth', require('./auth'));
 
   if (environment === 'production') {
+    console.log('Production routes enabled.' + '\n');
     // Page routes
     app.route('/admin*').get(function adminPage(req, res) {
-      res.sendFile('client/build/index.html'); // Admin app location may change in future
+      res.sendFile(path.join(__dirname, '../../client/build/index.html')); // Admin app location may change in future
     });
 
     app.route('/*').get(function mainApp(req, res) {
-      res.sendFile('client/build/index.html');
+      res.sendFile(path.join(__dirname, '../../client/build/index.html'));
     });
   }
 }
