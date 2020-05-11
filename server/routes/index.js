@@ -26,5 +26,7 @@ module.exports = function enableRoutes(app, passport) {
       console.log('Sending production react app from ' + `${path.join(__dirname, '../../client/build/index.html')}`);
       res.sendFile(path.join(__dirname, '../../client/build/index.html'));
     });
+  } else {
+    console.log('Non production environment.' + '/n');
   }
 }
