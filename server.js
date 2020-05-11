@@ -19,7 +19,7 @@ app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (environment === 'production') {
-  app.use(express.static(path.join(__dirname, './client/build/static')));
+  app.use('/static', express.static(path.join(__dirname, './client/build/static')));
 }
 
 // Add routes, both API and view
@@ -31,7 +31,7 @@ const db = require('./server/database').initializeDatabase();
 // Start the API server once database is connected
 db.on('connected', () => {
   console.log('Mongoose connection established');
-  app.listen(config.PORT, function() {
+  app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
 });
