@@ -18,11 +18,12 @@ module.exports = function enableRoutes(app, passport) {
   if (environment === 'production') {
     console.log('Production routes enabled.' + '\n');
     // Page routes
-    app.route('/admin*').get(function adminPage(req, res) {
+    app.get('/admin*').get(function adminPage(req, res) {
       res.sendFile(path.join(__dirname, '../../client/build/index.html')); // Admin app location may change in future
     });
 
-    app.route('/*').get(function mainApp(req, res) {
+    app.get('/*').get(function mainApp(req, res) {
+      console.log('Sending production react app from ' + `${path.join(__dirname, '../../client/build/index.html')}`);
       res.sendFile(path.join(__dirname, '../../client/build/index.html'));
     });
   } else {
