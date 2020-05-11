@@ -18,11 +18,11 @@ export const LeafletMap = () => {
   const [businessData, setBusinessData] = useState();
   const [activeBusiness, setActiveBusiness] = useState(null);
 
-  useEffect(async () => {
-    async function anon () {
+  useEffect(() => {
+    async function getData () {
       setBusinessData(await getAllBusinesses());
     }
-    anon();
+    getData();
   }, [setBusinessData]);
 
   // Constants
