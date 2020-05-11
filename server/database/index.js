@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-const MONGO_URI = process.env.MONGODB_URI || config.get('mongoUri');
+const MONGODB_URI = process.env.MONGODB_URI || config.get('MONGODB_URI');
 const MAX_RETRIES = config.get('MAX_RETRIES');
 let num_retries = 0;
 const db = mongoose.connection;
@@ -22,7 +22,7 @@ const initializeDatabase = (app, config) => {
   });
   if (app && config.PORT) {
     db.on('connected', () => {
-      console.log(`Mongoose connection established at ${MONGO_URI}`);
+      console.log(`Mongoose connection established at ${MONGODB_URI}`);
       app.listen(config.PORT, function() {
         console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
       });
@@ -40,7 +40,7 @@ const initializeDatabase = (app, config) => {
       num_retries++;
       console.log('Lost Mongoose connection. Retrying in 3...');
       setTimeout(() => {
-        mongoose.connect(MONGO_URI,
+        mongoose.connect(MONGODB_URI,
           {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -58,7 +58,7 @@ const initializeDatabase = (app, config) => {
     console.log('Mongoose connection re-established.');
   });
 
-  mongoose.connect(MONGO_URI, {
+  mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     socketTimeoutMS: 5000,
