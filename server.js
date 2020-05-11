@@ -4,8 +4,8 @@ const passport = require('passport');
 const config = require('config');
 const morgan = require('morgan');
 const path = require('path');
-const fs = require('fs');
-const https = require('https');
+// const fs = require('fs');
+// const https = require('https');
 
 // Variables
 const PORT = process.env.PORT || config.get('PORT');
@@ -15,14 +15,14 @@ const enableRoutes = require('./server/routes');
 const app = express();
 
 // Certificate
-const privateKey = fs.readFileSync('./certs/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('./certs/cert.pem', 'utf8');
-const ca = fs.readFileSync('./certs/chain.pem', 'utf8');
-const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
-};
+// const privateKey = fs.readFileSync('./certs/privkey.pem', 'utf8');
+// const certificate = fs.readFileSync('./certs/cert.pem', 'utf8');
+// const ca = fs.readFileSync('./certs/chain.pem', 'utf8');
+// const credentials = {
+// 	key: privateKey,
+// 	cert: certificate,
+// 	ca: ca
+// };
 
 app.use(morgan('dev'));
 
@@ -41,15 +41,12 @@ enableRoutes(app, passport);
 // Connect to the Mongo server
 const db = require('./server/database').initializeDatabase();
 
-const httpsServer = https.createServer(credentials, app);
+// const httpsServer = https.createServer(credentials, app);
 
 // Start the API server once database is connected
 db.on('connected', () => {
   console.log('Mongoose connection established');
-  app.listen(PORT, function() {
-    console.log(`🌎  ==> HTTP API Server now listening on PORT ${PORT}!`);
-  });
-  httpsServer.listen(443, () => {
-    console.log(`🌎  ==> HTTPS API Server now listening on PORT 443!`);
+  app.listen(PORT, () => {
+    console.log(`🌎  ==> HTTPS API Server now listening on PORT ${PORT}!`);
   })
 });
