@@ -1,5 +1,6 @@
 'use-strict';
 
 module.exports = {
-  env: 'production'
+  env: 'production',
+  MAX_RETRIES: 10
 };
