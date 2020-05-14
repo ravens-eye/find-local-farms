@@ -48,7 +48,10 @@ function Home(props) {
           </Paper>
         </Grid>
         <Grid item sm={12}>
-          <Paper className={classes.paper}></Paper>
+          <Paper className={classes.paper}>
+            <br></br>
+          </Paper>
+
         </Grid>
       </Grid>
     </div>

@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   footerStyle : {
-    backgroundColor: 'rgba(80, 170, 85, 0.493)',
+    backgroundColor: 'black',
     opacity: '0.4',
     fontSize: '15px',
     color: 'white',
@@ -14,7 +14,7 @@ const styles = theme => ({
     textAlign: 'left',
     left: '0',
     bottom: '0',
-    height: '70px',
+    height: '20px',
     padding: '1.5rem',
     width: 'calc(100% - 3rem)'
   }
