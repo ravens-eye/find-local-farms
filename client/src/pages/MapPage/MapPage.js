@@ -17,6 +17,9 @@ class MapPage extends Component  {
  
   return (
     <div>
+    <h1>
+      <br></br><br></br>
+    </h1>
       <LMap />
     </div>
   );

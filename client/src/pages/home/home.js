@@ -38,7 +38,7 @@ function Home(props) {
         <Grid item xs={12}></Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-            <h1>Find Local Farms</h1>
+            <br></br><br></br>
           </Paper>
         </Grid>
         <Grid item xs={12}>
