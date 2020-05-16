@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 // import { Link } from 'react-router-dom';
 import LMap from '../../components/leafletMap';
-import './home.css';
+
 
 const styles = theme => ({
   root: {
@@ -27,7 +27,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5rem',
-    marginBottom: '5rem'
+    // marginBottom: '5rem'
   },
 });
 
