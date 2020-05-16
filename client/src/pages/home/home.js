@@ -49,8 +49,6 @@ function Home(props) {
         </Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-          {/* space for future additions */}
-          <br></br>
           </Paper>
         </Grid>
       </Grid>
