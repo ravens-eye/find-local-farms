@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MapPage from './pages/MapPage';
+import Admin from './pages/admin';
 import Home from './pages/home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ class App extends Component {
             <Nav />
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/mapPage' component={MapPage} />
+              <Route exact path='/admin' component={Admin} />
             </Switch>
             <Footer />
           </div>
