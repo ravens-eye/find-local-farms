@@ -19,9 +19,6 @@ const styles = theme => ({
     width: 'calc(100% - 3rem)',
 
     position:'fixed',
-    left:'0',
-    bottom:'0',
-    right:'0'
   }
 });
 
