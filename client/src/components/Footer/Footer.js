@@ -14,11 +14,11 @@ const styles = theme => ({
     textAlign: 'left',
     left: '0',
     bottom: '0',
-    height: '20px',
+    height: '1rem',
     padding: '1.5rem',
     width: 'calc(100% - 3rem)',
 
-    position:'absolute',
+    position:'fixed',
     left:'0',
     bottom:'0',
     right:'0'

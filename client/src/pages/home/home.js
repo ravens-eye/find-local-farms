@@ -27,7 +27,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5rem',
-    // marginBottom: '5rem'
+    marginBottom: '5rem'
   },
 });
 
