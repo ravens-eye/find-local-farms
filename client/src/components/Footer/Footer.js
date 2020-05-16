@@ -7,14 +7,14 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   footerStyle : {
     backgroundColor: 'black',
-    opacity: '0.4',
+    opacity: '0.2',
     fontSize: '15px',
     color: 'white',
     borderTop: '1px solid #E7E7E7',
     textAlign: 'left',
     left: '0',
     bottom: '0',
-    height: '1rem',
+    height: '.5rem',
     padding: '1.5rem',
     width: 'calc(100% - 3rem)',
 
