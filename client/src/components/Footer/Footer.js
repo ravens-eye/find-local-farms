@@ -18,7 +18,7 @@ const styles = theme => ({
     padding: '1.5rem',
     width: 'calc(100% - 3rem)',
 
-    position:'fixed',
+    position:'relative',
   }
 });
 
