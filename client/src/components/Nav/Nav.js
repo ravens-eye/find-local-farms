@@ -5,21 +5,15 @@ import DropDownNav from '../DropDownNav'
 import './Nav.css'
 // import { orange } from '@material-ui/core/colors';
 class Nav extends React.Component {
-  state = {
   
-  };
-
   render() {
    
-
     return (
       <React.Fragment>
       <div className="navbar">
         
-    
           <Link to="/">Find Local Farms</Link>
        
-        
           <div className="links">
           <Link to="/"><b>Home</b></Link>
           <Link to="/mapPage"><b>Test</b></Link>
@@ -27,14 +21,8 @@ class Nav extends React.Component {
           <Button id="menuItem" target="_top"><b>Log In</b></Button> 
         </div>
         <div className="dropdown">
-        <DropDownNav />
-         </div>
-          {/* <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-
-          {/* dropdown menu */}
-          
-      
+          <DropDownNav />
+        </div>
     </div>
     </React.Fragment>
     );
