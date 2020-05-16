@@ -39,7 +39,7 @@ class SimpleMenu extends React.Component {
         >
           <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/">Home</MenuItem>
           {/* <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">admin</MenuItem> */}
-          <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/mapPage">Test</MenuItem>
+          <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">Admin</MenuItem>
 
           <Button id="menuItem" target="_top"><b>Log In</b></Button> 
         </Menu>

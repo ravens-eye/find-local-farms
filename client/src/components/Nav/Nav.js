@@ -16,8 +16,7 @@ class Nav extends React.Component {
        
           <div className="links">
           <Link to="/"><b>Home</b></Link>
-          <Link to="/mapPage"><b>Test</b></Link>
-          {/* <Link to='/admin'><b>Admin</b></Link> */}
+          <Link to="/Admin"><b>Admin</b></Link>
           <Button id="menuItem" target="_top"><b>Log In</b></Button> 
         </div>
         <div className="dropdown">

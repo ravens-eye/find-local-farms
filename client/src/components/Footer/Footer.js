@@ -16,7 +16,12 @@ const styles = theme => ({
     bottom: '0',
     height: '20px',
     padding: '1.5rem',
-    width: 'calc(100% - 3rem)'
+    width: 'calc(100% - 3rem)',
+
+    position:'absolute',
+    left:'0',
+    bottom:'0',
+    right:'0'
   }
 });
 
