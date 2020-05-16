@@ -28,11 +28,8 @@ class SimpleMenu extends React.Component {
           aria-owns={anchorEl ? 'simple-menu' : undefined}
           aria-haspopup="true"
           onClick={this.handleClick}
-        
-        >
-          
-            <MenuIcon style={{height: '40px', width: '40px'}} />
-          
+        >         
+          <MenuIcon style={{height: '40px', width: '40px'}} />         
         </Button>
         <Menu
           id="simple-menu"
@@ -44,11 +41,7 @@ class SimpleMenu extends React.Component {
           {/* <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">admin</MenuItem> */}
           <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/mapPage">Test</MenuItem>
 
-          {/* <MenuItem onClick={this.handleClose} component={Link} to="/contact">Contact</MenuItem>
-           */}
-             {/* <!-- Start Square Appointments Embed code -->  */}
-             <Button id="menuItem" target="_top"><b>Log In</b></Button> 
-           {/* <!-- End Square Appointments Embed code -->   */}
+          <Button id="menuItem" target="_top"><b>Log In</b></Button> 
         </Menu>
       </div>
     );
