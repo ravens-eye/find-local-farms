@@ -4,22 +4,12 @@ import React, {Component} from 'react';
 import LMap from '../../components/leafletMap';
 
 class MapPage extends Component  {
-  constructor(props){
-    super(props);
-    this.state={
- 
-    }
    
-  }
-  
 
   render() {
  
   return (
     <div>
-    <h1>
-      <br></br><br></br>
-    </h1>
       <LMap />
     </div>
   );
@@ -27,6 +17,6 @@ class MapPage extends Component  {
 }
 
 
-// render(<Map />, document.getElementById('container'))
+
 
 export default MapPage;

@@ -26,6 +26,8 @@ const styles = theme => ({
   map: {
     display: 'flex',
     justifyContent: 'center',
+    marginTop: '5rem',
+    marginBottom: '5rem'
   },
 });
 
@@ -38,7 +40,6 @@ function Home(props) {
         <Grid item xs={12}></Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-            <br></br><br></br>
           </Paper>
         </Grid>
         <Grid item xs={12}>
@@ -49,9 +50,7 @@ function Home(props) {
         </Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-            <br></br>
           </Paper>
-
         </Grid>
       </Grid>
     </div>

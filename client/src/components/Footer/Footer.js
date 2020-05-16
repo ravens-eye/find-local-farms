@@ -8,13 +8,13 @@ const styles = theme => ({
   footerStyle : {
     backgroundColor: 'black',
     opacity: '0.4',
-    fontSize: '15rem',
+    fontSize: '15px',
     color: 'white',
     borderTop: '1px solid #E7E7E7',
     textAlign: 'left',
     left: '0',
     bottom: '0',
-    height: '20rem',
+    height: '20px',
     padding: '1.5rem',
     width: 'calc(100% - 3rem)'
   }
