@@ -1,7 +1,7 @@
 import React from "react";
 
 // Material-UI Imports
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -25,10 +25,17 @@ const useStyles = makeStyles((theme) =>
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
+    btnGrp: {
+     display: "inline-grid",
+    },
+    clearBtn: {
+      fontSize: "0.7rem"
+    }
   })
 );
 
-export default function Form() {
+export default function Form(props) {
+
   const classes = useStyles();
   const [source, setSource] = React.useState("All");
   const [delivery, setDelivery] = React.useState("Delivery");
@@ -88,9 +95,14 @@ export default function Form() {
         </FormControl>
       </div>
       <CheckboxGroup />
-      <Button variant="contained" color="secondary">
-        Search
-      </Button>
-      </>
+      <div className={classes.btnGrp}>
+        <Button variant="contained" color="secondary" onClick={() => props.setResults([0,1,2,3,4,5,6,7,8])}>
+          Search
+        </Button>
+        <Button color="primary" onClick={() => props.setResults([])} className={classes.clearBtn}>
+          Clear
+        </Button>
+      </div>
+    </>
   );
 }
