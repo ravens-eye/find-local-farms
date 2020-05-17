@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Form from '../../components/Form';
 import LMap from '../../components/leafletMap';
 
 
@@ -49,6 +50,7 @@ function Home(props) {
         </Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
+            <Form />
           </Paper>
         </Grid>
       </Grid>
