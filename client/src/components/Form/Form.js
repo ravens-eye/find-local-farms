@@ -2,6 +2,7 @@ import React from "react";
 
 // Material-UI Imports
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -87,6 +88,9 @@ export default function Form() {
         </FormControl>
       </div>
       <CheckboxGroup />
+      <Button variant="contained" color="secondary">
+        Search
+      </Button>
       </>
   );
 }

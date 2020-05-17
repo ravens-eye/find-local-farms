@@ -10,7 +10,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    padding: theme.spacing(5),
+    paddingLeft: theme.spacing(10),
   },
   formControl: {
     margin: theme.spacing(3),
