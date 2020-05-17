@@ -53,7 +53,7 @@ export default function DiscreteSlider() {
         aria-labelledby="discrete-slider-always"
         step={5}
         marks={marks}
-        valueLabelDisplay="on"
+        valueLabelDisplay="auto"
       />
     </div>
   );

@@ -9,6 +9,7 @@ import Select from "@material-ui/core/Select";
 
 // Local imports
 import DistanceSlider from './DistanceSlider';
+import CheckboxGroup from "./CheckboxGroup";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -85,6 +86,7 @@ export default function Form() {
           </Select>
         </FormControl>
       </div>
-    </>
+      <CheckboxGroup />
+      </>
   );
 }
