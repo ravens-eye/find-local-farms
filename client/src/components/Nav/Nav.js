@@ -1,22 +1,27 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
+// import DropDownNav from '../DropDownNav'
 import './Nav.css'
+// import { orange } from '@material-ui/core/colors';
 class Nav extends React.Component {
-  state = {
   
-  };
-
   render() {
    
     return (
       <React.Fragment>
-      <div className='navbar'>
+      <div className="navbar">
         
-        
-          {/* <div className='links'>
-          <Link to='/secondary'><b>Secondary</b></Link>
+          <Link to="/">Find Local Farms</Link>
        
-        </div>   */}
+          <div className="links">
+          <Link to="/"><b>Home</b></Link>
+          <Link to="/Admin"><b>Admin</b></Link>
+          <Button id="menuItem" target="_top"><b>Log In</b></Button> 
+        </div>
+        <div className="dropdown">
+          {/* <DropDownNav /> */}
+        </div>
     </div>
     </React.Fragment>
     );

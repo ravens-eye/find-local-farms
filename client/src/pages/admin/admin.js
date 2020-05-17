@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import LMap from '../../components/leafletMap';
-
 
 const styles = theme => ({
   root: {
@@ -16,39 +14,25 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
     lineHeight: '45px',
     boxShadow: 'none',
+    marginTop: '5rem'
   },
   intro: {
     textAlign: 'center',
     lineHeight: '45px',
     fontSize: '25px',
   },
-  map: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '5rem',
-    marginBottom: '5rem'
-  },
 });
 
-function Home(props) {
+
+function Admin(props){
   const { classes } = props;
 
-  return (
+  return(
     <div className={classes.root}>
       <Grid container>
-        <Grid item xs={12}></Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid item xs={4}></Grid>
-          <Paper className={classes.map}>
-            <LMap />
-          </Paper>
-        </Grid>
-        <Grid item sm={12}>
-          <Paper className={classes.paper}>
+          <h1>Admin Page</h1>
           </Paper>
         </Grid>
       </Grid>
@@ -56,8 +40,8 @@ function Home(props) {
   );
 }
 
-Home.propTypes = {
+Admin.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Admin);
