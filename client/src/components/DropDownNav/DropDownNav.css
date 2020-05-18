@@ -1,18 +1,18 @@
-#menuItem{
-  background-color: rgba(255, 253, 138, 0.774); 
-  color: rgb(0, 0, 0); 
-  height: 40px; 
-  text-transform: uppercase; 
+#menuItem {
+  background-color: rgba(255, 253, 138, 0.774);
+  color: rgb(0, 0, 0);
+  height: 40px;
+  text-transform: uppercase;
   font-family: 'Merienda', cursive;
-  letter-spacing: 1px; 
-  line-height: 38px; 
-  padding: 0 15px; 
-  border-radius: 3px; 
+  letter-spacing: 1px;
+  line-height: 38px;
+  padding: 0 15px;
+  border-radius: 3px;
   border-style: solid;
   border-width: 3px;
   border-color: rgb(167, 164, 0);
-  font-weight: 500; 
-  font-size: 12x; 
-  cursor: pointer; 
+  font-weight: 500;
+  font-size: 12x;
+  cursor: pointer;
   display: inline-block;
 }
