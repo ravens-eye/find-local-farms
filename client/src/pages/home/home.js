@@ -5,8 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LMap from '../../components/leafletMap';
 
-
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -26,7 +25,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5rem',
-    marginBottom: '5rem'
+    marginBottom: '5rem',
   },
 });
 
@@ -38,8 +37,7 @@ function Home(props) {
       <Grid container>
         <Grid item xs={12}></Grid>
         <Grid item sm={12}>
-          <Paper className={classes.paper}>
-          </Paper>
+          <Paper className={classes.paper}></Paper>
         </Grid>
         <Grid item xs={12}>
           <Grid item xs={4}></Grid>
@@ -48,8 +46,7 @@ function Home(props) {
           </Paper>
         </Grid>
         <Grid item sm={12}>
-          <Paper className={classes.paper}>
-          </Paper>
+          <Paper className={classes.paper}></Paper>
         </Grid>
       </Grid>
     </div>
