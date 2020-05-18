@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
@@ -41,6 +41,7 @@ function valuetext(value) {
 
 export default function DiscreteSlider() {
   const classes = useStyles();
+  const [distance, setDistance] = useState(25);
 
   return (
     <div className={classes.root}>
@@ -54,6 +55,7 @@ export default function DiscreteSlider() {
         step={5}
         marks={marks}
         valueLabelDisplay="auto"
+        onChange={(e)=>setDistance(Number(e.target.textContent))}
       />
     </div>
   );

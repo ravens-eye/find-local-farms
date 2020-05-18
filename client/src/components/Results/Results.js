@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Results(props) {
     return (
-        <div class>
+        <div>
             {props.results.map((item,i)=>(
-                <p>Result {i}</p>
+                <p key={i}>Result {i}</p>
             ))}
         </div>
     )
