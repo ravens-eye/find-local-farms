@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Form from '../../components/Form';
 import LMap from '../../components/leafletMap';
+import Results from '../../components/Results';
 
 const styles = (theme) => ({
   root: {
@@ -31,6 +33,7 @@ const styles = (theme) => ({
 
 function Home(props) {
   const { classes } = props;
+  const [results, setResults] = useState([]);
 
   return (
     <div className={classes.root}>
@@ -41,12 +44,19 @@ function Home(props) {
         </Grid>
         <Grid item xs={12}>
           <Grid item xs={4}></Grid>
-          <Paper className={classes.map}>
+          <Paper elevation={0} className={classes.map}>
             <LMap />
           </Paper>
         </Grid>
         <Grid item sm={12}>
-          <Paper className={classes.paper}></Paper>
+          <Paper className={classes.paper}>
+            <Form setResults={setResults} />
+          </Paper>
+        </Grid>
+        <Grid item sm={12}>
+          <Paper className={classes.paper}>
+            <Results results={results} />
+          </Paper>
         </Grid>
       </Grid>
     </div>
