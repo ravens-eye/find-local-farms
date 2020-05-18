@@ -16,39 +16,30 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   formLabel: {
-      margin: "25px 0",
-      textAlign: "start"
+    margin: "25px 0",
+    textAlign: "start",
   },
   formHelperText: {
     color: "red",
-    margin: "10px 0"
+    margin: "10px 0",
   },
   checkboxGroup: {
-      flexDirection: "row",
-      justifyContent: "space-around",
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   checkboxLabel: {
-    width: 185
-  }
+    width: 185,
+  },
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup({ checkboxData, setCheckboxData }) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    chicken: false,
-    beef: false,
-    pork: false,
-    lamb: false,
-    eggs: false,
-    rabbit: false,
-    micro: false,
-    honey: false,
-    flowers: false,
-    other: false,
-  });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    setCheckboxData({
+      ...checkboxData,
+      [event.target.name]: event.target.checked,
+    });
   };
 
   const {
@@ -62,14 +53,32 @@ export default function CheckboxesGroup() {
     honey,
     flowers,
     other,
-  } = state;
-  const error = [chicken,beef,pork,lamb,eggs,rabbit,micro,honey,flowers,other].filter((v) => v).length < 1;
+  } = checkboxData;
+  const error =
+    [
+      chicken,
+      beef,
+      pork,
+      lamb,
+      eggs,
+      rabbit,
+      micro,
+      honey,
+      flowers,
+      other,
+    ].filter((v) => v).length < 1;
 
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend" className={classes.formLabel}>Looking for: </FormLabel>
-        {error && <FormHelperText className={classes.formHelperText}>You must select at least one!</FormHelperText>}
+        <FormLabel component="legend" className={classes.formLabel}>
+          Looking for:{" "}
+        </FormLabel>
+        {error && (
+          <FormHelperText className={classes.formHelperText}>
+            You must select at least one!
+          </FormHelperText>
+        )}
         <FormGroup className={classes.checkboxGroup}>
           <FormControlLabel
             className={classes.checkboxLabel}
