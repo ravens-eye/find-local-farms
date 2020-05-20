@@ -33,6 +33,7 @@ function Admin(props) {
   }, [setBusinessData]);
 
   const { classes } = props;
+  console.log(businessData);
 
   return (
     <div className={classes.root}>
@@ -41,6 +42,9 @@ function Admin(props) {
           <Paper className={classes.paper}>
             <h1>Admin Page</h1>
           </Paper>
+          <ul>
+            {businessData && businessData.map(data => <li>{data.name}</li>)}
+          </ul>
         </Grid>
       </Grid>
     </div>

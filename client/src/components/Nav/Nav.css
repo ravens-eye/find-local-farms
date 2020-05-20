@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 1rem);
   overflow: hidden;
   background-color: rgba(241, 239, 239, 0);
   z-index: 100;

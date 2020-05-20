@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
 // Material-UI Imports
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { Button, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 
 // Local imports
-import DistanceSlider from "./DistanceSlider";
-import CheckboxGroup from "./CheckboxGroup";
+import DistanceSlider from './DistanceSlider';
+import CheckboxGroup from './CheckboxGroup';
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     formRowOne: {
-      display: "flex",
-      justifyContent: "space-around",
+      display: 'flex',
+      justifyContent: 'space-around',
     },
     formControl: {
       margin: theme.spacing(1),
@@ -26,18 +22,18 @@ const useStyles = makeStyles((theme) =>
       marginTop: theme.spacing(2),
     },
     btnGrp: {
-      display: "inline-grid",
+      display: 'inline-grid',
     },
     clearBtn: {
-      fontSize: "0.7rem",
+      fontSize: '0.7rem',
     },
   })
 );
 
-export default function Form({ setResults }) {
+export default function FilterForm({ setResults }) {
   const classes = useStyles();
-  const [source, setSource] = useState("All");
-  const [delivery, setDelivery] = useState("Delivery");
+  const [source, setSource] = useState('All');
+  const [delivery, setDelivery] = useState('Delivery');
   const [distance, setDistance] = useState(25);
   const [checkboxData, setCheckboxData] = useState({
     chicken: false,
@@ -52,13 +48,6 @@ export default function Form({ setResults }) {
     other: false,
   });
 
-  useEffect(() => console.log(source, delivery, distance, checkboxData), [
-    source,
-    delivery,
-    distance,
-    checkboxData,
-  ]);
-
   const handleChangeSource = (event) => {
     setSource(event.target.value);
   };
@@ -71,45 +60,45 @@ export default function Form({ setResults }) {
     <>
       <div className={classes.formRowOne}>
         <FormControl className={classes.formControl}>
-          <InputLabel shrink id="sourceLabel">
+          <InputLabel shrink id='sourceLabel'>
             Source
           </InputLabel>
           <Select
-            labelId="sourceLabel"
-            id="sourcePlaceholder"
+            labelId='sourceLabel'
+            id='sourcePlaceholder'
             value={source}
             onChange={handleChangeSource}
             displayEmpty
             className={classes.selectEmpty}
           >
-            <MenuItem value="All">
+            <MenuItem value='All'>
               <em>All</em>
             </MenuItem>
-            <MenuItem value={"Farm"}>Farm</MenuItem>
-            <MenuItem value={"Market"}>Market</MenuItem>
-            <MenuItem value={"Creamery"}>Creamery</MenuItem>
-            <MenuItem value={"Bakery"}>Bakery</MenuItem>
+            <MenuItem value={'Farm'}>Farm</MenuItem>
+            <MenuItem value={'Market'}>Market</MenuItem>
+            <MenuItem value={'Creamery'}>Creamery</MenuItem>
+            <MenuItem value={'Bakery'}>Bakery</MenuItem>
           </Select>
         </FormControl>
         <DistanceSlider distance={distance} setDistance={setDistance} />
         <FormControl className={classes.formControl}>
-          <InputLabel shrink id="deliveryLabel">
+          <InputLabel shrink id='deliveryLabel'>
             Delivery Method
           </InputLabel>
           <Select
-            labelId="deliveryLabel"
-            id="deliveryPlaceholder"
+            labelId='deliveryLabel'
+            id='deliveryPlaceholder'
             value={delivery}
             onChange={handleChangeDelivery}
             displayEmpty
             className={classes.selectEmpty}
           >
-            <MenuItem value="Delivery">
+            <MenuItem value='Delivery'>
               <em>Delivery</em>
             </MenuItem>
-            <MenuItem value={"Pickup"}>Pickup</MenuItem>
-            <MenuItem value={"Curbside"}>Curbside</MenuItem>
-            <MenuItem value={"Other"}>Other</MenuItem>
+            <MenuItem value={'Pickup'}>Pickup</MenuItem>
+            <MenuItem value={'Curbside'}>Curbside</MenuItem>
+            <MenuItem value={'Other'}>Other</MenuItem>
           </Select>
         </FormControl>
       </div>
@@ -119,14 +108,14 @@ export default function Form({ setResults }) {
       />
       <div className={classes.btnGrp}>
         <Button
-          variant="contained"
-          color="secondary"
+          variant='contained'
+          color='secondary'
           onClick={() => setResults([0, 1, 2, 3, 4, 5, 6, 7, 8])}
         >
           Search
         </Button>
         <Button
-          color="primary"
+          color='primary'
           onClick={() => setResults([])}
           className={classes.clearBtn}
         >

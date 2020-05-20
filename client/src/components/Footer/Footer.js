@@ -1,38 +1,36 @@
 import React from 'react';
-// import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
-
 const styles = theme => ({
-  footerStyle : {
-    backgroundColor: 'black',
-    opacity: '0.2',
-    fontSize: '15px',
+  footerStyle: {
+    backgroundColor: 'rgba(0, 0, 0, .2)',
     color: 'white',
     borderTop: '1px solid #E7E7E7',
-    textAlign: 'left',
+    textAlign: 'center',
     left: '0',
     bottom: '0',
-    height: '.5rem',
-    padding: '1.5rem',
-    width: 'calc(100% - 3rem)',
-
-    position:'relative',
-  }
+    right: '0',
+    height: '2.5rem',
+    paddingBottom: '1.25rem',
+    position: 'absolute',
+  },
+  padding: {
+    minHeight: '2.5rem',
+  },
 });
 
 function Footer(props) {
   const { classes } = props;
   return (
-    <div>
-      <div className={classes.footerStyle}>
+    <>
+      <div className={classes.padding}></div>
+      <footer className={classes.footerStyle}>
         <p>Raven's Eye Solutions ©</p>
-      </div>
-    </div>
+      </footer>
+    </>
   );
 }
-
 
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,

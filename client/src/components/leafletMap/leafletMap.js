@@ -70,8 +70,18 @@ export const LeafletMap = () => {
             <h2>{activeBusiness.name}</h2>
             <p>Contact us</p>
             <ul>
-              <li>{activeBusiness.contact.email}</li>
-              <li>{activeBusiness.contact.phone}</li>
+              {activeBusiness.contact.email && 
+                <li>
+                  <a href={`mailto:${activeBusiness.contact.email}`} target='_blank' rel='noopener noreferrer'>
+                    {activeBusiness.contact.email}
+                  </a>
+                </li>
+              }
+              {activeBusiness.contact.phone && 
+                <li>
+                  {activeBusiness.contact.phone}
+                </li>
+              }
             </ul>
           </div>
         </Popup>

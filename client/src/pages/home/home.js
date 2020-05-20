@@ -1,33 +1,38 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Form from "../../components/Form";
-import LMap from "../../components/leafletMap";
-import Results from "../../components/Results";
+// React
+import React, { useState } from 'react';
 
-const styles = (theme) => ({
+// Material UI
+import { withStyles } from '@material-ui/core/styles';
+import { Grid, Paper } from '@material-ui/core';
+
+import PropTypes from 'prop-types';
+
+// Local imports
+import Form from '../../components/FilterForm';
+import LeafletMap from '../../components/leafletMap';
+import Results from '../../components/Results';
+
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: 'center',
     color: theme.palette.text.secondary,
-    lineHeight: "45px",
-    boxShadow: "none",
+    lineHeight: '45px',
+    boxShadow: 'none',
   },
   intro: {
-    textAlign: "center",
-    lineHeight: "45px",
-    fontSize: "25px",
+    textAlign: 'center',
+    lineHeight: '45px',
+    fontSize: '25px',
   },
   map: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "5rem",
-    marginBottom: "5rem",
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '5rem',
+    marginBottom: '5rem',
   },
 });
 
@@ -45,7 +50,7 @@ function Home(props) {
         <Grid item xs={12}>
           <Grid item xs={4}></Grid>
           <Paper elevation={0} className={classes.map}>
-            <LMap />
+            <LeafletMap />
           </Paper>
         </Grid>
         <Grid item sm={12}>
