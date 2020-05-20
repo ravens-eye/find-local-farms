@@ -1,3 +1,4 @@
+/* eslint no-useless-escape: 0 */
 // Validation functions
 
 // Email validation
@@ -7,9 +8,11 @@ const validateAddress = address => {
 };
 const validatePhone = phoneNumber => {
   return phoneNumber;
-}
+};
 const validateEmail = email => {
-  const emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/); // eslint-disable-line no-useless-escape
+  const emailRegex = new RegExp(
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  );
   return emailRegex.test(email);
 };
 

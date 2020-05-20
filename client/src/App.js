@@ -17,11 +17,11 @@ class App extends Component {
       <>
         <Router>
           <Nav />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/admin' component={Admin} />
-            </Switch>
-          </Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/admin" component={Admin} />
+          </Switch>
+        </Router>
         <Footer />
       </>
     );

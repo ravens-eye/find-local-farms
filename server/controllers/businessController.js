@@ -7,10 +7,10 @@ async function createBusiness(busObject) {
   // TODO field validation
 
   return Business.create(busObject)
-    .then(business => {
+    .then((business) => {
       return { ok: true, data: business._id };
     })
-    .catch(err => {
+    .catch((err) => {
       return { error: err };
     });
 }
@@ -21,10 +21,10 @@ async function getAllBusinesses(limit) {
     .select('-__v')
     .sort({ dateUpdated: -1 })
     .limit(limit || 20)
-    .then(businesses => {
+    .then((businesses) => {
       return { ok: true, data: businesses };
     })
-    .catch(err => {
+    .catch((err) => {
       return { error: err };
     });
 }
@@ -33,10 +33,10 @@ async function getAllBusinesses(limit) {
 async function getBusinessById(id) {
   return Business.findById(id)
     .select('-__v')
-    .then(business => {
+    .then((business) => {
       return { ok: true, data: business };
     })
-    .catch(err => {
+    .catch((err) => {
       return { error: err };
     });
 }
@@ -48,10 +48,10 @@ async function updateBusinessById(id, busObj) {
     select: '-__v -_id',
     new: true,
   })
-    .then(business => {
+    .then((business) => {
       return { ok: true, data: business };
     })
-    .catch(err => {
+    .catch((err) => {
       return { error: err };
     });
 }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const { ObjectId } = Schema.Types;
 
-const UserSchema = new Schema ({
+const UserSchema = new Schema({
   username: {
     type: String,
     required: 'A unique username is required.',
@@ -15,7 +15,7 @@ const UserSchema = new Schema ({
   },
   lastName: {
     type: String,
-    trim:true
+    trim: true
   },
   accountType: {
     type: String,
@@ -40,4 +40,4 @@ const UserSchema = new Schema ({
   }
 });
 
-const User = module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

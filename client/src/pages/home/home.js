@@ -1,18 +1,16 @@
-// React
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Material UI
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 
-import PropTypes from 'prop-types';
-
 // Local imports
-import Form from '../../components/FilterForm';
+import FilterForm from '../../components/FilterForm';
 import LeafletMap from '../../components/leafletMap';
 import Results from '../../components/Results';
+import { getAllBusinesses } from '../../api/businessApi';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -20,13 +18,14 @@ const styles = theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    lineHeight: '45px',
+    lineHeight: '2.8rem',
     boxShadow: 'none',
+    width: '100%',
   },
   intro: {
     textAlign: 'center',
-    lineHeight: '45px',
-    fontSize: '25px',
+    lineHeight: '2.8rem',
+    fontSize: '1.5rem',
   },
   map: {
     display: 'flex',
@@ -38,7 +37,28 @@ const styles = theme => ({
 
 function Home(props) {
   const { classes } = props;
-  const [results, setResults] = useState([]);
+  const [position, setPosition] = useState({});
+  const [businessData, setBusinessData] = useState([]);
+  const [filteredBusinessData, setFilteredBusinessData] = useState([]);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setPosition(pos);
+    });
+  }, []);
+
+  useEffect(() => {
+    async function getData() {
+      const data = await getAllBusinesses();
+      setBusinessData(data);
+      setFilteredBusinessData(data);
+    }
+    getData();
+  }, []);
+
+  const resetBusinessData = () => {
+    setFilteredBusinessData(businessData);
+  };
 
   return (
     <div className={classes.root}>
@@ -50,26 +70,27 @@ function Home(props) {
         <Grid item xs={12}>
           <Grid item xs={4}></Grid>
           <Paper elevation={0} className={classes.map}>
-            <LeafletMap />
+            <LeafletMap curPosition={position} businessData={filteredBusinessData} />
           </Paper>
         </Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-            <Form setResults={setResults} />
+            <FilterForm
+              position={position}
+              setFilteredBusinessData={setFilteredBusinessData}
+              resetBusinessData={resetBusinessData}
+              businessData={businessData}
+            />
           </Paper>
         </Grid>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-            <Results results={results} />
+            {filteredBusinessData.length !== businessData.length && <Results businessData={filteredBusinessData} />}
           </Paper>
         </Grid>
       </Grid>
     </div>
   );
 }
-
-Home.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(Home);
