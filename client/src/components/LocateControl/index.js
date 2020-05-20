@@ -1,1 +1,1 @@
-export { default } from './LocateControl'
+export { default } from './LocateControl';

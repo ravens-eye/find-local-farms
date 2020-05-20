@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 import { getAllBusinesses } from '../../api/businessApi';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -42,9 +42,7 @@ function Admin(props) {
           <Paper className={classes.paper}>
             <h1>Admin Page</h1>
           </Paper>
-          <ul>
-            {businessData && businessData.map(data => <li>{data.name}</li>)}
-          </ul>
+          <ul>{businessData && businessData.map((data, i) => <li key={`${data}-${i}`}>{data.name}</li>)}</ul>
         </Grid>
       </Grid>
     </div>

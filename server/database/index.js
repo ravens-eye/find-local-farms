@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/camelcase */
 /* Mongo Database
-* - this is where we set up our connection to the mongo database
-*/
+ * - this is where we set up our connection to the mongo database
+ */
 
 const mongoose = require('mongoose');
 const config = require('config');
@@ -16,14 +15,15 @@ let num_retries = 0;
 const db = mongoose.connection;
 
 const initializeDatabase = (app, config) => {
+  const { PORT } = config;
 
   db.on('connecting', () => {
     console.log('Connecting to MongoDB...');
   });
-  if (app && config.PORT) {
+  if (app && PORT) {
     db.on('connected', () => {
       console.log(`Mongoose connection established at ${MONGODB_URI}`);
-      app.listen(config.PORT, function() {
+      app.listen(PORT, function () {
         console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
       });
     });
@@ -40,14 +40,13 @@ const initializeDatabase = (app, config) => {
       num_retries++;
       console.log('Lost Mongoose connection. Retrying in 3...');
       setTimeout(() => {
-        mongoose.connect(MONGODB_URI,
-          {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            socketTimeoutMS: 5000,
-            connectTimeoutMS: 5000,
-            autoReconnect: true
-          });
+        mongoose.connect(MONGODB_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          socketTimeoutMS: 5000,
+          connectTimeoutMS: 5000,
+          autoReconnect: true
+        });
       }, 3000);
     } else {
       console.log('Mongoose connection errored out.');
@@ -66,7 +65,7 @@ const initializeDatabase = (app, config) => {
   });
 
   return db;
-}
+};
 
 module.exports = {
   initializeDatabase: initializeDatabase,
