@@ -1,77 +1,61 @@
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  /* align-content: space-between; */
   position: absolute;
   width: 100%;
   overflow: hidden;
   background-color: rgba(241, 239, 239, 0);
   z-index: 100;
-  font-family: 'Merienda', cursive;
 }
 
 .navbar a {
-  font-size: 22px;
+  text-decoration: none;
+  font-size: 1.5rem;
   color: black;
   text-align: center;
-  padding: 30px 50px;
-  font-style: italic
-
-}
-
-.navbar img {
-  padding: 30px 60px 0px 0px;
-  height: 200px;
-  
+  padding: 2.8rem 3.1rem;
 }
 
 .links {
   display: inline-flex;
-  padding-right: 50px;
+  padding-right: 3.1rem;
 }
 
-
-@media only screen and (min-width: 1121px) {
+@media only screen and (min-width: 70rem) {
   .dropdown {
     display: none;
   }
 }
 
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 70rem) {
   .links {
     display: none;
   }
-
 }
-@media only screen and (max-width: 750px) {
-  
-  .navbar img{
-    padding: 10px 30px 0px 0px;
-  height: 100px;
+@media only screen and (max-width: 46.875rem) {
+  .navbar img {
+    padding: 0.65rem 2rem 0 0;
+    height: 6.25;
   }
 }
 
-#submitButton{
-  background-color: rgba(246, 235, 72, 0.774); 
-  color: rgb(0, 0, 0); 
-  height: 40px; 
-  text-transform: uppercase; 
+#log-in-button {
+  background-color: rgba(250, 250, 250, 0.774);
+  color: rgb(0, 0, 0);
+  height: 4rem;
+  text-transform: uppercase;
   font-family: 'Merienda', cursive;
-  letter-spacing: 1px; 
-  line-height: 38px; 
-  padding: 0 15px; 
-  border-radius: 3px; 
+  letter-spacing: 1px;
+  line-height: 2rem;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+  border-radius: 3px;
   border-style: solid;
-  border-width: 3px;
-  border-color: rgb(167, 164, 0);
-  font-weight: 500; 
-  font-size: 16px; 
-  cursor: pointer; 
+  border-width: 0.1rem;
+  border-color: rgb(218, 218, 213);
+  font-weight: 50;
+  font-size: 1rem;
+  cursor: pointer;
   display: inline-block;
 }

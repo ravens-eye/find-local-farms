@@ -1,51 +1,58 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { Link } from 'react-router-dom';
-import './DropDownNav.css'
+import { Button, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
- 
-class SimpleMenu extends React.Component {
-  state = {
-    anchorEl: null,
+import './DropDownNav.css';
+
+export default function SimpleMenu() {
+  const [anchorEl, setAnchorEl] = React.useState();
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
   };
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget });
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
-  render() {
-    const { anchorEl } = this.state;
-
-    return (
-      <div>
-        <Button
-          aria-owns={anchorEl ? 'simple-menu' : undefined}
-          aria-haspopup="true"
-          onClick={this.handleClick}
-        >         
-          <MenuIcon style={{height: '40px', width: '40px'}} />         
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={this.handleClose}
+  return (
+    <div>
+      <Button
+        aria-controls='simple-menu'
+        aria-haspopup='true'
+        onClick={handleClick}
+      >
+        <MenuIcon style={{ height: '2.5rem', width: '2.5rem' }} />
+      </Button>
+      <Menu
+        id='simple-menu'
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem
+          className='menuItem'
+          onClick={handleClose}
+          component={Link}
+          to='/'
         >
-          <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/">Home</MenuItem>
-          {/* <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">admin</MenuItem> */}
-          <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">Admin</MenuItem>
+          Home
+        </MenuItem>
 
-          <Button id="menuItem" target="_top"><b>Log In</b></Button> 
-        </Menu>
-      </div>
-    );
-  }
+        <MenuItem
+          className='menuItem'
+          onClick={handleClose}
+          component={Link}
+          to='/admin'
+        >
+          Admin
+        </MenuItem>
+
+        <Button id='log-in-button' target='_top'>
+          <b>Log In</b>
+        </Button>
+      </Menu>
+    </div>
+  );
 }
-
-export default SimpleMenu;
