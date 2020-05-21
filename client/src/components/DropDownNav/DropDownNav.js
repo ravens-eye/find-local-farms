@@ -1,3 +1,4 @@
+// React
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Menu, MenuItem } from '@material-ui/core';
@@ -7,7 +8,7 @@ import './DropDownNav.css';
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState();
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -17,41 +18,21 @@ export default function SimpleMenu() {
 
   return (
     <div>
-      <Button
-        aria-controls='simple-menu'
-        aria-haspopup='true'
-        onClick={handleClick}
-      >
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <MenuIcon style={{ height: '2.5rem', width: '2.5rem' }} />
       </Button>
-      <Menu
-        id='simple-menu'
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <MenuItem
-          className='menuItem'
-          onClick={handleClose}
-          component={Link}
-          to='/'
-        >
+      <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+        <MenuItem className="menuItem" onClick={handleClose} component={Link} to="/">
           Home
         </MenuItem>
 
-        <MenuItem
-          className='menuItem'
-          onClick={handleClose}
-          component={Link}
-          to='/admin'
-        >
+        <MenuItem className="menuItem" onClick={handleClose} component={Link} to="/admin">
           Admin
         </MenuItem>
 
-        <Button id='log-in-button' target='_top'>
+        <Link id="log-in-button" to="/auth">
           Log In
-        </Button>
+        </Link>
       </Menu>
     </div>
   );
