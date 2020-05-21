@@ -1,10 +1,13 @@
+// React
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+
+// Material UI
+import { Button, Menu, MenuItem } from '@material-ui/core';
+import { MenuIcon } from '@material-ui/icons';
+
 import { Link } from 'react-router-dom';
+
 import './DropDownNav.css'
-import MenuIcon from '@material-ui/icons/Menu';
  
 class SimpleMenu extends React.Component {
   state = {
@@ -41,7 +44,11 @@ class SimpleMenu extends React.Component {
           {/* <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">admin</MenuItem> */}
           <MenuItem className="menuItem" onClick={this.handleClose} component={Link} to="/admin">Admin</MenuItem>
 
-          <Button id="menuItem" target="_top"><b>Log In</b></Button> 
+          <Link to='/login'>
+            <Button id="menuItem" target="_top">
+              <b>Log In</b>
+            </Button> 
+          </Link>
         </Menu>
       </div>
     );
