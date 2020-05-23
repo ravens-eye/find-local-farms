@@ -14,18 +14,16 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Router>
-          <div >
-            <Nav />
+          <Nav />
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/admin' component={Admin} />
             </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </React.Fragment>
+          </Router>
+        <Footer />
+      </>
     );
   }
 }
