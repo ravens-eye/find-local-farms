@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Paper } from '@material-ui/core';
+import { getAllBusinesses } from '../../api/businessApi';
 
 const styles = theme => ({
   root: {
@@ -12,36 +11,40 @@ const styles = theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    lineHeight: '45px',
+    lineHeight: '2.8rem',
     boxShadow: 'none',
-    marginTop: '5rem'
+    marginTop: '5rem',
   },
   intro: {
     textAlign: 'center',
-    lineHeight: '45px',
-    fontSize: '25px',
+    lineHeight: '2.8rem',
+    fontSize: '1.5rem',
   },
 });
+function Admin(props) {
+  const [businessData, setBusinessData] = useState();
 
+  // API call
+  useEffect(() => {
+    async function getData() {
+      setBusinessData(await getAllBusinesses());
+    }
+    getData();
+  }, [setBusinessData]);
 
-function Admin(props){
   const { classes } = props;
 
-  return(
+  return (
     <div className={classes.root}>
       <Grid container>
         <Grid item sm={12}>
           <Paper className={classes.paper}>
-          <h1>Admin Page</h1>
+            <h1>Admin Page</h1>
           </Paper>
         </Grid>
       </Grid>
     </div>
   );
 }
-
-Admin.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(Admin);

@@ -1,33 +1,23 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom'
-// import DropDownNav from '../DropDownNav'
-import './Nav.css'
-// import { orange } from '@material-ui/core/colors';
-class Nav extends React.Component {
-  
-  render() {
-   
-    return (
-      <React.Fragment>
-      <div className="navbar">
-        
-          <Link to="/">Find Local Farms</Link>
-       
-          <div className="links">
-          <Link to="/"><b>Home</b></Link>
-          <Link to="/Admin"><b>Admin</b></Link>
-          <Button id="menuItem" target="_top"><b>Log In</b></Button> 
-        </div>
-        <div className="dropdown">
-          {/* <DropDownNav /> */}
-        </div>
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import DropDownNav from '../DropDownNav';
+import './Nav.css';
+
+const Nav = () => (
+  <div className='navbar'>
+    <Link to='/'>Find Local Farms</Link>
+    <div className='links'>
+      <Link to='/'>Home</Link>
+      <Link to='/Admin'>Admin</Link>
+      <Button id='log-in-button' target='_top'>
+        <b>Log In</b>
+      </Button>
     </div>
-    </React.Fragment>
-    );
-  }
-}
+    <div className='dropdown'>
+      <DropDownNav />
+    </div>
+  </div>
+);
 
 export default Nav;
-
-
