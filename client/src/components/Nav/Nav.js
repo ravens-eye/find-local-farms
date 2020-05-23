@@ -11,7 +11,7 @@ const Nav = () => (
       <Link to='/'>Home</Link>
       <Link to='/Admin'>Admin</Link>
       <Button id='log-in-button' target='_top'>
-        <b>Log In</b>
+        Log In
       </Button>
     </div>
     <div className='dropdown'>

@@ -3,7 +3,6 @@
   color: rgb(0, 0, 0);
   height: 2.5rem;
   text-transform: uppercase;
-  font-family: 'Merienda', cursive;
   letter-spacing: 1px;
   line-height: 2.5rem;
   padding: 0 1rem;
@@ -11,7 +10,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: rgb(218, 217, 199);
-  font-weight: 500;
+  font-weight: bold;
   font-size: 0.75rem;
   cursor: pointer;
   display: inline-block;
