@@ -50,7 +50,7 @@ export default function SimpleMenu() {
         </MenuItem>
 
         <Button id='log-in-button' target='_top'>
-          <b>Log In</b>
+          Log In
         </Button>
       </Menu>
     </div>
