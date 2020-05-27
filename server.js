@@ -26,6 +26,15 @@ if (environment === 'production') {
   );
 }
 
+// Redirect all incoming insecure requests to HTTPS
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
+
 // Add routes, both API and view
 enableRoutes(app, passport);
 
