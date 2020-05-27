@@ -28,11 +28,9 @@ if (environment === 'production') {
 
 // Redirect all incoming insecure requests to HTTPS
 app.use((req, res, next) => {
-  const { secure, protocol, connection, headers, url } = req;
-  console.log(secure);
-  console.log(protocol);
-  console.log(connection.encrypted);
-  if (protocol === 'http') {
+  const { headers, url } = req;
+  console.log(headers['x-forwarded-proto']);
+  if (headers['x-forwarded-proto'] !== 'https') {
     res.redirect('https://' + headers.host + url);
   } else {
     next();
