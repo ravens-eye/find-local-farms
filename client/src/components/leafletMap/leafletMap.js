@@ -40,8 +40,8 @@ export const LeafletMap = () => {
   return (
     <Map className='container' center={position} zoom={state.zoom}>
       <TileLayer
-        attribution='&copy; <a href=&apos;http://osm.org/copyright&apos;>OpenStreetMap</a> contributors'
-        url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+        attribution='&copy; <a href=&apos;https://www.openstreetmap.org/copyright&apos;>OpenStreetMap</a> contributors'
+        url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
       />
       {businessData && businessData.length > 0 && businessData.map((biz, i) => (
         <Marker
