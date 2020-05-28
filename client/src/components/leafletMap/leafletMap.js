@@ -32,7 +32,7 @@ export const LeafletMap = () => {
       title: 'Show Current Location'
     },
     locateOptions: {
-      maxZoom: 12
+      maxZoom: 10
     },
     onActivate: () => {} // callback before engine starts retrieving locations
   };
@@ -77,9 +77,14 @@ export const LeafletMap = () => {
                   </a>
                 </li>
               }
-              {activeBusiness.contact.phone && 
+              {activeBusiness.url && 
                 <li>
-                  {activeBusiness.contact.phone}
+                  {activeBusiness.url}
+                </li>
+              }
+              {activeBusiness.address && 
+                <li>
+                  {activeBusiness.address}
                 </li>
               }
             </ul>

@@ -4,11 +4,15 @@ import Locate from 'leaflet.locatecontrol';
 
 class LocateControl extends React.Component {
   componentDidMount() {
-    const { options, startDirectly } = this.props;
-    const { map } = this.props.leaflet;
+    const { options, startDirectly, leaflet } = this.props;
+    const { map } = leaflet;
 
     const lc = new Locate(options);
     lc.addTo(map);
+
+    map.on('locationerror', e => {
+      console.log(e.message);
+    });
 
     if (startDirectly) {
       // request location update and set location
