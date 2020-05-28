@@ -5,9 +5,11 @@ const config = require('config');
 const morgan = require('morgan');
 const path = require('path');
 
+const ENV = config.get('env');
+
 // Variables
 const PORT = process.env.PORT || config.get('PORT');
-const environment = process.env.NODE_ENV || config.get('env');
+const environment = process.env.NODE_ENV || ENV;
 const enableRoutes = require('./server/routes');
 
 const app = express();
@@ -27,15 +29,17 @@ if (environment === 'production') {
 }
 
 // Redirect all incoming insecure requests to HTTPS
-app.use((req, res, next) => {
-  const { headers, url } = req;
-  console.log(headers['x-forwarded-proto']);
-  if (headers['x-forwarded-proto'] !== 'https') {
-    res.redirect('https://' + headers.host + url);
-  } else {
-    next();
-  }
-});
+if (ENV === 'production') {
+  app.use((req, res, next) => {
+    const { headers, url } = req;
+    console.log(headers['x-forwarded-proto']);
+    if (headers['x-forwarded-proto'] !== 'https') {
+      res.redirect('https://' + headers.host + url);
+    } else {
+      next();
+    }
+  });
+}
 
 // Add routes, both API and view
 enableRoutes(app, passport);
