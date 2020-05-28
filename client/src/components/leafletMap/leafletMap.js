@@ -32,7 +32,7 @@ export const LeafletMap = () => {
       title: 'Show Current Location'
     },
     locateOptions: {
-      maxZoom: 12
+      maxZoom: 9
     },
     onActivate: () => {} // callback before engine starts retrieving locations
   };
