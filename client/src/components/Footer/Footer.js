@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
+const styles = () => ({
   footerStyle: {
     backgroundColor: 'rgba(0, 0, 0, .2)',
     color: 'white',
@@ -26,14 +25,10 @@ function Footer(props) {
     <>
       <div className={classes.padding}></div>
       <footer className={classes.footerStyle}>
-        <p>Raven's Eye Solutions ©</p>
+        <p>Raven&apos;s Eye Solutions ©</p>
       </footer>
     </>
   );
 }
-
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(Footer);

@@ -5,6 +5,11 @@ import { Slider, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 300,
+    [theme.breakpoints.down('xs')]: {
+      margin: '0 auto',
+      padding: '2rem',
+      order: 2,
+    },
   },
   margin: {
     height: theme.spacing(3),
@@ -43,16 +48,16 @@ export default function DiscreteSlider({ setDistance }) {
 
   return (
     <div className={classes.root}>
-      <Typography id='discrete-slider-always' gutterBottom>
+      <Typography id="discrete-slider-always" gutterBottom>
         Distance Away (miles)
       </Typography>
       <Slider
-        defaultValue={25}
+        defaultValue={100}
         getAriaValueText={valuetext}
-        aria-labelledby='discrete-slider-always'
+        aria-labelledby="discrete-slider-always"
         step={5}
         marks={marks}
-        valueLabelDisplay='auto'
+        valueLabelDisplay="auto"
         onChange={(e) => setDistance(Number(e.target.textContent))}
       />
     </div>

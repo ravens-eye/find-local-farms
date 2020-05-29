@@ -1,11 +1,15 @@
 import React from 'react';
 
 export default function Results(props) {
-    return (
-        <div>
-            {props.results.map((item,i)=>(
-                <p key={i}>Result {i}</p>
-            ))}
+  return (
+    <div>
+      {props.businessData.map((item, i) => (
+        <div key={i}>
+          <p>
+            {item.name} - {item.offerings}
+          </p>
         </div>
-    )
-} 
+      ))}
+    </div>
+  );
+}

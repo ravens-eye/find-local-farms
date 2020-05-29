@@ -12,25 +12,28 @@
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "if-env": "1.0.4",
-    "mongoose": "5.9.10",
+    "mongoose": "^5.9.16",
     "morgan": "1.10.0",
     "passport": "0.4.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "concurrently": "^3.6.1",
-    "nodemon": "^1.11.0"
+    "concurrently": "^5.2.0",
+    "eslint": "^7.1.0",
+    "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "prestart:prod": "npm run build",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node ./scripts/seedDB.js",
-    "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "prod:local": "NODE_ENV=production PORT=3001 MONGODB_URI=mongodb://localhost/farm-db npm run start"
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "lint": "eslint . --ext .js,.jsx --ignore-pattern node_modules/ --fix",
+    "lint:server": "eslint ./server/**/*.js --fix",
+    "prestart:prod": "npm run build",
+    "prod:local": "NODE_ENV=production PORT=3001 MONGODB_URI=mongodb://localhost/farm-db npm run start",
+    "seed": "node ./scripts/seedDB.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "node server.js"
   }
 }

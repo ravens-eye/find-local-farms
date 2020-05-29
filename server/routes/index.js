@@ -22,12 +22,17 @@ module.exports = function enableRoutes(app, passport) {
     });
 
     // To enable SSL with certbot
-    app.get('/.well-known/acme-challenge/THXm3zx-_1grMQEOAxObDyjdzFiHsQSYf79XbcPVr2k', (req, res) => {
-      res.send('THXm3zx-_1grMQEOAxObDyjdzFiHsQSYf79XbcPVr2k.x4RfPYOsRMR7-Ltc6xeIBJWscKCFlk3U1neOM0efGM0');
-    })
+    app.get(
+      '/.well-known/acme-challenge/THXm3zx-_1grMQEOAxObDyjdzFiHsQSYf79XbcPVr2k',
+      (req, res) => {
+        res.send(
+          'THXm3zx-_1grMQEOAxObDyjdzFiHsQSYf79XbcPVr2k.x4RfPYOsRMR7-Ltc6xeIBJWscKCFlk3U1neOM0efGM0'
+        );
+      }
+    );
 
     app.get('/*', (req, res) => {
       res.sendFile(path.join(__dirname, '../../client/build/index.html'));
     });
   }
-}
+};
