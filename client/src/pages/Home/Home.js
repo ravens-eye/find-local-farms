@@ -20,7 +20,6 @@ const styles = (theme) => ({
     color: theme.palette.text.secondary,
     lineHeight: '2.8rem',
     boxShadow: 'none',
-    width: '100%',
   },
   intro: {
     textAlign: 'center',
@@ -63,17 +62,12 @@ function Home(props) {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid item xs={12}></Grid>
-        <Grid item sm={12}>
-          <Paper className={classes.paper}></Paper>
-        </Grid>
         <Grid item xs={12}>
-          <Grid item xs={4}></Grid>
           <Paper elevation={0} className={classes.map}>
             <LeafletMap curPosition={position} businessData={filteredBusinessData} />
           </Paper>
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <Paper className={classes.paper}>
             <FilterForm
               position={position}
@@ -83,7 +77,7 @@ function Home(props) {
             />
           </Paper>
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <Paper className={classes.paper}>
             {filteredBusinessData.length !== businessData.length && <Results businessData={filteredBusinessData} />}
           </Paper>

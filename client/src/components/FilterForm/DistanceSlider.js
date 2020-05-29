@@ -7,8 +7,9 @@ const useStyles = makeStyles((theme) => ({
     width: 300,
     [theme.breakpoints.down('xs')]: {
       margin: '0 auto',
-      padding: '2rem',
+      padding: '2rem 0',
       order: 2,
+      maxWidth: 200,
     },
   },
   margin: {

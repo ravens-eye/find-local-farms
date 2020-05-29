@@ -1,0 +1,24 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.form .info {
+	color: #313F9F;
+}
+
+.form label.valid,
+.form span.submit-success {
+	color: green;
+}
+
+.form label.invalid,
+.error,
+.form span.submit-failure {
+	color: red;
+}
+
+p.small-text {
+	font-size: .75rem;
+}
